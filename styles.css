@@ -206,3 +206,10 @@ a.social:hover {
 
 }
 
+/* cards looked left aligned and not centered on mobile devices wider then 560px */
+@media screen and (max-width: 719px){
+  .card{
+    margin: 30px auto; /* center the cards */
+  }
+}
+
