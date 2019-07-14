@@ -23,13 +23,15 @@ a:hover {
 
 /* Section Styles */
 
-.main-nav {
+.nav-wrapper {
+  z-index: 1000; /* prevent profile image pop through nav issue */
   width: 100%;
   background: #222;
   min-height: 30px;
   padding: 10px;
   position: fixed;
   text-align: center;
+  top:0;
 }
 .nav {
   display: flex;
@@ -60,7 +62,8 @@ header {
   background: url('images/goulburn.jpg') no-repeat top center ;
   background-size: cover;
   overflow: hidden;
-  padding-top: 60px;
+  margin-top: 55px;
+  position: relative;
 }
 header {
   line-height: 1.5; 
@@ -70,11 +73,11 @@ header .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid white;
-  transition: all .5s;
+  border: 4px solid #eb2227;
+  transition: all .4s;
 }
 header .profile-image:hover {
-  transform: scale(1.4) rotate(15deg);
+  transform: scale(1.4) rotate(45deg);
 }
 .tag {
   background-color: #efefef;
@@ -89,17 +92,28 @@ header .profile-image:hover {
   color: #bab53e;
   padding: 15px;
 }
-.card {
+.card, .card-full-width {
   margin: 30px;
   padding: 20px 40px 40px;
-  max-width: 500px;
   text-align: left;
   background: #fff;
   border-bottom: 4px solid #ccc;
   border-radius: 6px;
   transition: all .5s;
 }
-.card:hover {
+.card{
+  /* using a full width version on the contact page */
+  max-width: 500px;
+}
+.card-full-width{
+  max-width: 100%;
+}
+.card-full-width > img{
+  max-width: 100%;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+.card:hover ,.card-full-width:hover {
   border-color: #eb2227;
 }
 
@@ -213,3 +227,8 @@ a.social:hover {
   }
 }
 
+section img{
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
